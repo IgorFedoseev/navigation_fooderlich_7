@@ -36,7 +36,7 @@ class GroceryListScreen extends StatelessWidget {
               manager.deleteItem(index);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('${item.name} dismissed'),
+                  content: Text('${item.name} deleted'),
                 ),
               );
             },
