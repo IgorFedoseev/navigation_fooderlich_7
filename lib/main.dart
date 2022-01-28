@@ -39,13 +39,13 @@ class _FooderlichState extends State<Fooderlich> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (context) => _appStateManager,
+        ),
+        ChangeNotifierProvider(
           create: (context) => _groceryManager,
         ),
         ChangeNotifierProvider(
           create: (context) => _profileManager,
-        ),
-        ChangeNotifierProvider(
-          create: (context) => _appStateManager,
         ),
       ],
       child: Consumer<ProfileManager>(
@@ -56,7 +56,6 @@ class _FooderlichState extends State<Fooderlich> {
           } else {
             theme = FooderlichTheme.light();
           }
-
           return MaterialApp(
             theme: theme,
             title: 'Fooderlich',
